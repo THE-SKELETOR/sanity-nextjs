@@ -132,6 +132,11 @@ body {
   margin-top: var(--space-4);
 }
 
+.post .post__tags {
+  font-size: var(--font-size-1);
+  line-height: var(--line-height-1);
+}
+
 @media (min-width: 800px) {
   .post .post__cover,
   .post .post__cover--none {
