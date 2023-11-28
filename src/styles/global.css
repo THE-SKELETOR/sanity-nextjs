@@ -135,6 +135,7 @@ body {
 .post .post__tags {
   font-size: var(--font-size-1);
   line-height: 0;
+  display: inline-flex;
 }
 
 @media (min-width: 800px) {

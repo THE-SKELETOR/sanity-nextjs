@@ -73,7 +73,7 @@ export default function ProjectSlugRoute(
             <PortableText value={post.body} />
           </div>
           <div className="post__tags">{post.tags?.map((tag) => (
-            <p key={tag}>{tag}</p>
+            <p key={tag}>{tag}, </p>
           ))}</div>
         </div>
       </section>
