@@ -134,7 +134,7 @@ body {
 
 .post .post__tags {
   font-size: var(--font-size-1);
-  line-height: var(--line-height-1);
+  line-height: 0;
 }
 
 @media (min-width: 800px) {
