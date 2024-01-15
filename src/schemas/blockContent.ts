@@ -15,7 +15,7 @@ export default defineType({
   name: 'blockContent',
   type: 'array',
   of: [
-    defineArrayMember({
+    {
       title: 'Block',
       type: 'block',
       // Styles let you set what your user can mark up blocks with. These
@@ -27,7 +27,6 @@ export default defineType({
         { title: 'H1', value: 'h1' },
         { title: 'H2', value: 'h2' },
         { title: 'H3', value: 'h3' },
-        { title: 'H4', value: 'h4' },
         { title: 'Quote', value: 'blockquote' },
       ],
       lists: [{ title: 'Bullet', value: 'bullet' }],
@@ -55,6 +54,43 @@ export default defineType({
           },
         ],
       },
-    }),
+    },
+    {
+      type: 'object',
+      name: 'iconWithText',
+      title: 'icon with text',
+      fields: [
+        {
+          name: 'icon',
+          title: 'Icon',
+          type: 'image',
+          options: {
+            hotspot: true
+          }
+        },
+        {
+          name: 'text',
+          title: 'Text',
+          type: 'string'
+        },
+        {
+          name: 'myIcon',
+          title: 'My Icon',
+          type: 'icon'
+        }
+      ]
+    },
+    {
+      type: 'object',
+      name: 'importantText',
+      title: 'important text',
+      fields: [
+        {
+          name: 'text',
+          title: 'Text',
+          type: 'string'
+        },
+      ]
+    }
   ],
 })

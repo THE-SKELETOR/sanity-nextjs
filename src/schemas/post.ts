@@ -20,12 +20,19 @@ export default defineType({
         maxLength: 96,
       },
     }),
-    defineField({
+    {
       name: 'excerpt',
       title: 'Excerpt',
       type: 'text',
       rows: 4,
-    }),
+    },
+    {
+      title: 'Author',
+      name: 'author',
+      type: 'reference',
+      to: [{type: 'author'}],
+      validation: (Rule) => Rule.required(),
+    },
     defineField({
       name: 'mainImage',
       title: 'Main image',
@@ -39,11 +46,16 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
-    defineField({
+    {
       name: 'tags',
       title: 'Tags',
       type: 'array',
       of: [{type: 'string'}],
+    },
+    defineField({
+      name: 'favoriteColor',
+      title: 'Favorite color',
+      type: 'color',
     }),
   ],
   preview: {

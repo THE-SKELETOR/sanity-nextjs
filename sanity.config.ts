@@ -3,6 +3,7 @@
  */
 
 import { visionTool } from '@sanity/vision'
+import {colorInput} from '@sanity/color-input'
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import {
@@ -20,6 +21,7 @@ import {
   projectId,
 } from '~/lib/sanity.api'
 import { schema } from '~/schemas'
+import { iconify } from 'sanity-plugin-iconify'
 
 const iframeOptions = {
   url: defineUrlResolver({
@@ -63,5 +65,17 @@ export default defineConfig({
     // Vision lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
+    colorInput(),
+    iconify({
+      // Optional configuration
+
+    // Filter icons by collection for all Icon fields (this field has typed autocomplete ✨)
+    // Defaults to empty array (all collections)
+    collections: ['fa-brands', 'mdi'],
+
+    // Shows the selected icon name and collection underneath the icon picker
+    // Defaults to false
+    showName: true,
+    })
   ],
 })
